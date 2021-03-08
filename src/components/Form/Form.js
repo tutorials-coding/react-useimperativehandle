@@ -19,7 +19,8 @@ export function Form() {
 
   const inputEl = useRef(null)
   useEffect(() => {
-    inputEl.current.focus()
+    console.log(inputEl.current)
+    // inputEl.current.focus()
   }, [])
 
   function handleSubmit() {
@@ -43,7 +44,6 @@ export function Form() {
           id="email"
           name="email"
           onChange={handleEmailChange}
-          ref={inputEl}
         />
       </div>
       <CustomInput
@@ -51,6 +51,7 @@ export function Form() {
         name="email"
         id="email"
         onChange={handleEmailChange}
+        ref={inputEl}
       />
       <div className="form__input-container">
         <label htmlFor="phone">Phone:</label>
