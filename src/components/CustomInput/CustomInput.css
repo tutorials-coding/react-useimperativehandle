@@ -1,0 +1,19 @@
+.custom-input__main-container {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.custom-input__label {
+  display: block;
+  text-align: start;
+}
+
+.custom-input__input {
+  display: block;
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+  padding: 2px 7px;
+  box-sizing: border-box;
+  outline: none;
+  border: solid 2px gray;
+}

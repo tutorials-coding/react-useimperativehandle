@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { CustomInput } from '../CustomInput/CustomInput'
 import './Form.css'
 
 export function Form() {
@@ -45,6 +46,12 @@ export function Form() {
           ref={inputEl}
         />
       </div>
+      <CustomInput
+        label="Email:"
+        name="email"
+        id="email"
+        onChange={handleEmailChange}
+      />
       <div className="form__input-container">
         <label htmlFor="phone">Phone:</label>
         <input
