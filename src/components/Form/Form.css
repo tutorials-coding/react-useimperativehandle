@@ -1,0 +1,19 @@
+.form__main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 300px;
+
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.form__main-container > *:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.form__input-container > label {
+  width: 100%;
+  display: block;
+  text-align: start;
+}
