@@ -19,8 +19,7 @@ export function Form() {
 
   const inputEl = useRef(null)
   useEffect(() => {
-    console.log(inputEl.current)
-    // inputEl.current.focus()
+    inputEl.current.focus()
   }, [])
 
   function handleSubmit() {

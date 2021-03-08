@@ -1,10 +1,18 @@
+import { forwardRef, useImperativeHandle, useRef } from 'react'
 import './CustomInput.css'
 
-export function CustomInput({ label, name, id, onChange }) {
+function CustomInputInner({ label, name, id, onChange }, ref) {
   function handleChange(event) {
     event.preventDefault()
-    onChange(event.target.value)
+    onChange(event)
   }
+
+  const inputEl = useRef(null)
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      inputEl.current.focus()
+    },
+  }))
 
   return (
     <div className="custom-input__main-container">
@@ -17,7 +25,10 @@ export function CustomInput({ label, name, id, onChange }) {
         id={id}
         name={name}
         onChange={handleChange}
+        ref={inputEl}
       />
     </div>
   )
 }
+
+export const CustomInput = forwardRef(CustomInputInner)
