@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import './Form.css'
 
 export function Form() {
@@ -15,6 +15,11 @@ export function Form() {
   function handlePhoneChange(event) {
     setPhone(event.target.value)
   }
+
+  const inputEl = useRef(null)
+  useEffect(() => {
+    inputEl.current.focus()
+  }, [])
 
   function handleSubmit() {
     console.log({
@@ -37,6 +42,7 @@ export function Form() {
           id="email"
           name="email"
           onChange={handleEmailChange}
+          ref={inputEl}
         />
       </div>
       <div className="form__input-container">
